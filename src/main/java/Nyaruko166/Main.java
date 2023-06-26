@@ -15,45 +15,6 @@ import java.util.logging.Logger;
 public class Main {
 
     public static void main(String[] args) {
-
-//        new MainView().setVisible(true);
-        Scanner sc = new Scanner(System.in);
-        String srcStr = null;
-        String destStr = null;
-
-        srcStr = sc.nextLine();
-        destStr = sc.nextLine() + "/Saved";
-//        String destFinalStr = destStr;
-
-        File src = new File(srcStr);
-        File dest = new File(destStr);
-
-        copyFolder(src.toPath(), dest.toPath());
-
-    }
-
-    public static void copyFolder(Path src, Path dest) {
-
-        String destStr = dest.toString();
-
-        try {
-            FileUtils.deleteDirectory(new File(destStr));
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        new File(destStr).mkdirs();
-
-        try {
-            Files.walk(src).forEach(s -> {
-                try {
-                    Files.copy(s, dest.resolve(src.relativize(s)), StandardCopyOption.REPLACE_EXISTING);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        new MainView().setVisible(true);
     }
 }
