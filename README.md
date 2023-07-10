@@ -1,2 +1,2 @@
 # DGR-SaveUpdater
-Java application to move save from steam to crack and reverse
+Simple Java application to move saves from steam to crack and reverse for Deep Rock Galatic
